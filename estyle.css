@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=The+Nautigal&display=swap');
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.love {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(213, 5, 5);
+    position: relative;
+    transform: rotate(45deg) scale(6);
+    position: absolute;
+    border-radius: 1px;
+    animation: love 3s normal infinite;
+}
+
+@keyframes love {
+    0% {
+        transform: rotate(45deg) scale(6);
+    }
+    50% {
+        transform: rotate(45deg) scale(7);
+    }
+    100% {
+        transform: rotate(45deg) scale(6);
+    }
+}
+
+.love:before,
+.love:after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: rgb(213, 5, 5);
+    position: absolute;
+    border-radius: 50%;
+}
+
+.love:before {
+    content: "";
+    top: 0;
+    left: -25px;
+}
+
+.love:after {
+    top: -25px;
+}
+
+.te-amo {
+    position: fixed;
+    z-index: 100;
+    font-size: 130px;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    margin-top: -102px;
+    align-items: start;
+    font-family: 'The Nautigal', cursive;
+    color: rgb(255, 255, 255);
+    animation: letra 3s ease infinite;
+}
+
+@keyframes letra {
+    0% {
+        font-size: 130px;
+        text-shadow: 0 0 9px black, 0 0 9px black;
+    }
+    50% {
+        font-size: 150px;
+        text-shadow: 0 0 15px black, 0 0 15px black;
+    }
+    100% {
+        font-size: 130px;
+        text-shadow: 0 0 9px black, 0 0 9px black;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        display: flex;
+        height: 80vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .love {
+        transform: rotate(45deg) scale(3);
+        animation: love1 3s ease infinite;
+    }
+    @keyframes love1 {
+        0% {
+            transform: rotate(45deg) scale(3);
+        }
+        50% {
+            transform: rotate(45deg) scale(4);
+        }
+        100% {
+            transform: rotate(45deg) scale(3);
+        }
+    }
+    .te-amo {
+        font-size: 80px;
+        animation: letra1 3s ease infinite;
+    }
+    @keyframes letra1 {
+        0% {
+            font-size: 80px;
+            text-shadow: 0 0 4px black, 0 0 4px black;
+        }
+        50% {
+            font-size: 100px;
+            text-shadow: 0 0 9px black, 0 0 9px black;
+        }
+        100% {
+            font-size: 80px;
+            text-shadow: 0 0 4px black, 0 0 4px black;
+        }
+    }
+}
